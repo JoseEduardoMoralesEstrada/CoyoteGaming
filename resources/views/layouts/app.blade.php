@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoyoteGaming — @yield('title', 'Tu tienda de videojuegos')</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #fff; }
+        .alert-success { background: #16a34a; color: #fff; padding: 10px 20px; text-align: center; }
+        .alert-error { background: #dc2626; color: #fff; padding: 10px 20px; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-block; }
+        .btn-primary { background: #f97316; color: #fff; }
+        .btn-primary:hover { background: #ea6c0a; }
+        .btn-danger { background: #dc2626; color: #fff; }
+        .btn-secondary { background: #374151; color: #fff; }
+    </style>
+</head>
+<body>
+    @include('components.navbar')
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    @if(session('success'))
+        <div class="alert-success">{{ session('success') }}</div>
+    @endif
+    @if(session('error'))
+        <div class="alert-error">{{ session('error') }}</div>
+    @endif
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <main>
+        @yield('content')
+    </main>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    @include('components.footer')
+</body>
 </html>
