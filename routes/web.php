@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 // ─── Rutas públicas ───────────────────────────────────────────
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 })->name('home');
 
 Route::get('/productos', [ProductController::class, 'index'])->name('products.index');
