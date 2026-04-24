@@ -44,7 +44,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Productos (CRUD admin)
-    Route::resource('products', ProductController::class)->except(['index', 'show']);
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 
     // Categorías
     Route::resource('categories', CategoryController::class);
