@@ -33,6 +33,7 @@
         <p style="color:#9ca3af; font-size:12px; margin-bottom:20px;">Panel Admin</p>
         <a href="{{ route('admin.dashboard') }}">📊 Dashboard</a>
         <a href="{{ route('admin.products.create') }}">➕ Nuevo Producto</a>
+        <a href="{{ route('admin.products.index') }}">📦 Ver Productos</a>
         <a href="{{ route('admin.categories.index') }}">📂 Categorías</a>
         <hr style="border-color:#374151; margin:20px 0;">
         <a href="{{ route('products.index') }}">🛒 Ver tienda</a>
