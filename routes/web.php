@@ -16,9 +16,13 @@ Route::get('/', function () {
 Route::get('/productos', [ProductController::class, 'index'])->name('products.index');
 Route::get('/productos/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 
+
+Route::get('/dashboard', function () {
+    return redirect()->route('home');
+})->middleware(['auth'])->name('dashboard');
+
 // ─── Rutas autenticadas (clientes y admins) ───────────────────
 Route::middleware(['auth'])->group(function () {
-
     // Carrito
     Route::get('/carrito', [CartController::class, 'index'])->name('cart.index');
     Route::post('/carrito/agregar/{product}', [CartController::class, 'add'])->name('cart.add');
@@ -36,7 +40,6 @@ Route::middleware(['auth'])->group(function () {
 
 // ─── Rutas Admin ──────────────────────────────────────────────
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
