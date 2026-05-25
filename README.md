@@ -26,3 +26,17 @@ Se modificaron y utilizaron los siguientes archivos:
 ### Rama utilizada
 
 `feature/basic-seeding-validation`
+
+### Capturas de pantalla
+
+**Tabla de productos en base de datos:**
+<img width="975" height="650" alt="imagen" src="https://github.com/user-attachments/assets/7c1a893e-82dd-4825-bd73-4b80eef5d7ae" />
+
+
+**Listado de productos en el navegador:**
+<img width="975" height="623" alt="imagen" src="https://github.com/user-attachments/assets/1f89f376-9ba9-4ad7-a58e-d2a29f9b9575" />
+
+
+**Historial de commits:**
+<img width="975" height="541" alt="imagen" src="https://github.com/user-attachments/assets/769e1e5c-0e24-4694-bf81-d6bcc61bb5d1" />
+
